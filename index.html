@@ -1,35 +1,789 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HiFi Demo</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, sans-serif;
-      background: #111;
-      color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    main {
-      max-width: 800px;
-      padding: 2rem;
-    }
-    a {
-      color: #61dafb;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twin Cities HiFi | Your Minneapolis and St Paul Source for Home Theater</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        /* Scroll offset for fixed nav + wix banner */
+        html {
+            scroll-padding-top: 180px;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #4a9fd8;
+            letter-spacing: 8px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #4a9fd8;
+        }
+
+        .cta-button {
+            background: #4a9fd8;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74, 159, 216, 0.3);
+            color: white;
+        }
+
+        .hero {
+            margin-top: 80px;
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://static.wixstatic.com/media/368a19a61b2949aabbc65171a17c1b35.jpg/v1/fill/w_1600,h_800,al_c,q_85/368a19a61b2949aabbc65171a17c1b35.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #4a9fd8;
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(74, 159, 216, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1.2rem 3rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        .trust-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .trust-bar p {
+            font-size: 0.95rem;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .brands-section {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+            padding: 5rem 2rem;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            align-items: center;
+        }
+
+        .brand-logo {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .brand-logo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .brand-logo img {
+            max-width: 85%;
+            max-height: 70px;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: all 0.3s;
+        }
+
+        .brand-logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .dealer-demo-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .dealer-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .dealer-content > p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .demo-items {
+            background: rgba(255,255,255,0.15);
+            padding: 2.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .demo-items ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .demo-items li {
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            font-size: 1.05rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s;
+        }
+
+        .demo-items li:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .demo-items li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.5rem;
+            color: #a8ff78;
+        }
+
+        .about-section {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .about-text ul {
+            margin: 2rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .about-text li {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: #555;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .about-text li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .credential {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .credential h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .credential p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.08);
+            padding: 3rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .contact-item p {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .demo-cta {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .demo-cta h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .demo-cta p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.6;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 140px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <!-- Replace this content with your demo -->
-    <h1 style="display:none;">HiFi Demo</h1>
-    <p>Welcome to my HiFi demo page. Content goes here.</p>
-  </main>
+    <nav class="nav">
+        <div class="nav-content">
+            <div>
+                <div class="logo">Twin Cities HIFI</div>
+                <div class="logo-subtitle">Your Minneapolis and St Paul source for home theater</div>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#brands">Brands</a>
+                <a href="#dealer-demo">Dealer Demo</a>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Home Theater Systems</h1>
+            <p>Curated products that fit well in mid to upper end living room systems</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Schedule a Demo</a>
+                <a href="#dealer-demo" class="btn-secondary">View Specials</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <p>✓ Authorized Dealer for All Brands We Carry</p>
+    </div>
+
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2>Twin Cities HiFi - About Us</h2>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hi, I'm Madhu the owner of Twin Cities HiFi. I'm a physician by profession, and a long time home theater enthusiast. I started Twin Cities HiFi in 2024 with an aim to sell curated products that fit well in mid to upper end living room systems.</p>
+
+                <ul>
+                    <li><strong>Denon and Marantz</strong> offer a wide range of AVR's and Processors to fit any budget and listening goal. They have the option to offer DIRAC room correction, which rivals the best room correction suites</li>
+                    
+                    <li><strong>Bowers and Wilkins</strong> offers stunning performance, whether for critical 2ch listening or for immersive home theater</li>
+                    
+                    <li><strong>SVS</strong> is known for their legendary subwoofers. Adding that deep bass and chest thump to your home theater</li>
+                    
+                    <li><strong>Kaleidescape</strong> is the ultimate video source for the discerning cinephile</li>
+                    
+                    <li><strong>Furman and Panamax</strong> offer a wide range of solutions to protect your investment from power surges and spikes</li>
+                    
+                    <li><strong>RTI control systems</strong> ties everything together to make a complicated system easily operated by anyone in the family. Plus, they are locally owned with their HQ in Shakopee</li>
+                </ul>
+
+                <p style="font-weight: 600; margin-top: 2rem;">I'm authorized for everything I sell, so you have the peace of mind knowing you are covered by the full manufacturer's warranty</p>
+            </div>
+
+            <div>
+                <div class="credential">
+                    <h4>📍 Location</h4>
+                    <p>Based in Roseville, MN | Serving Minneapolis, St. Paul, and surrounding communities</p>
+                </div>
+                <div class="credential">
+                    <h4>🎯 Our Focus</h4>
+                    <p>Curated selection of premium brands for mid to upper-end living room and dedicated home theater systems</p>
+                </div>
+                <div class="credential">
+                    <h4>🤝 Personalized Service</h4>
+                    <p>Work directly with the owner for honest guidance and expert recommendations tailored to your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section" id="brands">
+        <div class="section-header">
+            <h2>Authorized Premium Brands</h2>
+            <p>We carefully select brands that deliver exceptional performance and value</p>
+        </div>
+        <div class="brands-grid">
+            <div class="brand-logo">
+                <img src="https://logos-world.net/wp-content/uploads/2021/04/Denon-Logo.png" alt="Denon">
+            </div>
+            <div class="brand-logo">
+                <img src="https://logos-world.net/wp-content/uploads/2023/02/Marantz-Logo.png" alt="Marantz">
+            </div>
+            <div class="brand-logo">
+                <img src="https://1000logos.net/wp-content/uploads/2020/09/Bowers-Wilkins-Logo.png" alt="Bowers & Wilkins">
+            </div>
+            <div class="brand-logo">
+                <img src="https://www.svsound.com/cdn/shop/files/SVS_Logo_2023_Black.png" alt="SVS">
+            </div>
+            <div class="brand-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Definitive_Technology_logo.svg/2560px-Definitive_Technology_logo.svg.png" alt="Definitive Technology">
+            </div>
+            <div class="brand-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Polk_Audio_logo.svg/2560px-Polk_Audio_logo.svg.png" alt="Polk Audio">
+            </div>
+            <div class="brand-logo">
+                <img src="https://www.kaleidescape.com/wp-content/themes/kaleidescape/dist/images/kaleidescape-logo_b8d7fe5e.svg" alt="Kaleidescape">
+            </div>
+            <div class="brand-logo">
+                <img src="https://rticontrol.com/wp-content/uploads/2021/02/RTI_logo.png" alt="RTI Control">
+            </div>
+            <div class="brand-logo">
+                <img src="https://furmanpower.com/wp-content/uploads/2020/07/furman_logo.png" alt="Furman">
+            </div>
+            <div class="brand-logo">
+                <img src="https://www.panamax.com/on/demandware.static/-/Library-Sites-Library_Content/default/dw2d840a90/images/Panamax-Logo-black.png" alt="Panamax">
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 3rem; color: #666; font-size: 1.05rem;">All products come with full manufacturer warranties and our expert support</p>
+    </section>
+
+    <section class="section dealer-demo-section" id="dealer-demo">
+        <div class="dealer-content">
+            <h2>Dealer Demo Stock</h2>
+            <p>All items here used in our showroom. Condition "like new" unless otherwise stated. Comes with full manufacturers warranty. Contact for pricing</p>
+            
+            <div class="demo-items">
+                <ul>
+                    <li>B&W 702 s3 Signature Tower pair - midnight blue</li>
+                    <li>B&W 705 s3 Signature Bookshelf pair - midnight blue</li>
+                    <li>B&W HTM71 s3 signature center channel - midnight blue</li>
+                    <li>Kaleidescape Strato V</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 2.5rem; font-size: 1.1rem;">Inventory changes frequently. Contact us for the latest availability and pricing on showroom demos and special offers.</p>
+        </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+        <div class="contact-grid">
+            <div>
+                <h2 style="font-size: 2.8rem; margin-bottom: 2rem; font-weight: 300;">Contact Us</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7; opacity: 0.9;">Please Contact us for Pricing, Product Questions or to place an order</p>
+                
+                <div class="demo-cta">
+                    <h4>🎬 Demo Available by Appointment Only</h4>
+                    <p>Experience our showroom systems and hear the difference for yourself. Schedule your private demonstration today.</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                
+                <div class="contact-item">
+                    <h4>Phone / Text</h4>
+                    <p>651-253-1876</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>twincitieshifi@gmail.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>Roseville, MN</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Hours</h4>
+                    <p>Mon - Fri: 9am - 4pm<br>
+                    Sat: 9am - 1pm<br>
+                    Sun: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Twin Cities HiFi. Authorized dealer for all brands carried. Roseville, MN.</p>
+        <p style="margin-top: 1rem;">Your Minneapolis and St Paul source for home theater</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling with proper offset for Wix banner
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Calculate position accounting for fixed nav and potential Wix banner
+                    const navHeight = 80;
+                    const wixBannerHeight = 50; // Approximate Wix studio banner height
+                    const offset = navHeight + wixBannerHeight + 20; // Extra padding
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .brand-logo, .demo-items li').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
