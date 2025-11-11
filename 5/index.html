@@ -565,7 +565,7 @@
             border-color: var(--primary);
             box-shadow: var(--shadow-soft);
         }
-        
+
         .examples-cta .btn-secondary:hover {
             background: #3b8dc2;
             color: #fff;
@@ -615,38 +615,62 @@
 
         .demo-items h3 {
             font-size: 1.05rem;
-            margin-bottom: 0.9rem;
+            margin-bottom: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             opacity: 0.9;
         }
 
-        .demo-items ul {
-            list-style: none;
+        .demo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
-        .demo-items li {
-            padding: 1.05rem 1.15rem;
-            background: rgba(0,0,0,0.2);
+        .demo-card {
+            background: rgba(0,0,0,0.28);
             border-radius: 12px;
-            font-size: 0.95rem;
+            padding: 1.15rem 1.25rem;
             border: 1px solid rgba(255,255,255,0.18);
-            transition: all 0.3s;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
         }
 
-        .demo-items li:hover {
-            background: rgba(0,0,0,0.35);
-            transform: translateX(4px);
+        .demo-card:hover {
+            background: rgba(0,0,0,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.35);
         }
 
-        .demo-items li::before {
-            content: "✓ ";
-            font-weight: bold;
-            margin-right: 0.4rem;
-            color: #a8ff78;
+        .demo-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(168, 255, 120, 0.16);
+            color: #e5fce0;
+        }
+
+        .demo-name {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .demo-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .demo-price-note {
+            font-size: 0.88rem;
+            opacity: 0.9;
+            margin-top: 0.4rem;
         }
 
         .dealer-footnote {
@@ -958,7 +982,7 @@
     <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-content">
             <p class="hero-kicker">Home Theater Boutique · Roseville, MN</p>
-            <h1 id="hero-heading">Premium Home Theater Systems</h1>
+            <h1 id="hero-heading">Premium Home Theater Systems for Minneapolis &amp; St Paul</h1>
             <p class="hero-subline">Curated home theater systems for real Twin Cities living rooms and dedicated theaters.</p>
 
             <div class="hero-buttons">
@@ -1084,68 +1108,67 @@
                 <p>I partner with brands that deliver excellent performance and long-term value across a range of rooms and budgets.</p>
             </div>
 
-        <div class="brands-grid">
-            <!-- Denon -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Denon_Logo.svg/800px-Denon_Logo.svg.png"
-                     alt="Denon Home Theater & AV Receivers">
-            </div>
-        
-            <!-- Marantz -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Marantz-Logo.svg/960px-Marantz-Logo.svg.png"
-                     alt="Marantz High-End AV Receivers and Processors">
-            </div>
-        
-            <!-- Bowers & Wilkins -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/B%26W_Logo_new.svg/960px-B%26W_Logo_new.svg.png"
-                     alt="Bowers &amp; Wilkins Speakers">
-            </div>
-        
-            <!-- SVS (updated) -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://cdn.brandfetch.io/idU4gIOz62/w/250/h/91/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1716158409487"
-                     alt="SVS Subwoofers and Speakers">
-            </div>
-        
-            <!-- Definitive Technology -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Definitive_Logo_full.svg/648px-Definitive_Logo_full.svg.png"
-                     alt="Definitive Technology Speakers">
-            </div>
-        
-            <!-- Polk Audio -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Polk_Audio_logo.png"
-                     alt="Polk Audio Speakers">
-            </div>
-        
-            <!-- Kaleidescape -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Kaleidescape_%28logo%29.svg"
-                     alt="Kaleidescape Movie Server Systems">
-            </div>
-        
-            <!-- RTI Control (updated) -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://www.rticontrol.com/media/logo/header_logo_4k.jpg"
-                     alt="RTI Control Systems">
-            </div>
-        
-            <!-- Furman (updated) -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://furmanpower.com/cdn/shop/files/gempages_522682543120581387-fba05679-56a7-4bfd-87d7-180b9218a901.png?v=17917068411288186120"
-                     alt="Furman Power Conditioning">
-            </div>
-        
-            <!-- Panamax (updated) -->
-            <div class="brand-logo reveal-on-scroll">
-                <img src="https://panamax.com/wp-content/uploads/Panamax-Nice-logo-color.svg"
-                     alt="Panamax Surge Protection">
-            </div>
-        </div>
+            <div class="brands-grid">
+                <!-- Denon -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Denon_Logo.svg/800px-Denon_Logo.svg.png"
+                         alt="Denon Home Theater & AV Receivers">
+                </div>
 
+                <!-- Marantz -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Marantz-Logo.svg/960px-Marantz-Logo.svg.png"
+                         alt="Marantz High-End AV Receivers and Processors">
+                </div>
+
+                <!-- Bowers & Wilkins -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/B%26W_Logo_new.svg/960px-B%26W_Logo_new.svg.png"
+                         alt="Bowers &amp; Wilkins Speakers">
+                </div>
+
+                <!-- SVS (updated) -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://cdn.brandfetch.io/idU4gIOz62/w/250/h/91/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1716158409487"
+                         alt="SVS Subwoofers and Speakers">
+                </div>
+
+                <!-- Definitive Technology -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Definitive_Logo_full.svg/648px-Definitive_Logo_full.svg.png"
+                         alt="Definitive Technology Speakers">
+                </div>
+
+                <!-- Polk Audio -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Polk_Audio_logo.png"
+                         alt="Polk Audio Speakers">
+                </div>
+
+                <!-- Kaleidescape -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Kaleidescape_%28logo%29.svg"
+                         alt="Kaleidescape Movie Server Systems">
+                </div>
+
+                <!-- RTI Control (updated) -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://www.rticontrol.com/media/logo/header_logo_4k.jpg"
+                         alt="RTI Control Systems">
+                </div>
+
+                <!-- Furman (updated) -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://furmanpower.com/cdn/shop/files/gempages_522682543120581387-fba05679-56a7-4bfd-87d7-180b9218a901.png?v=17917068411288186120"
+                         alt="Furman Power Conditioning">
+                </div>
+
+                <!-- Panamax (updated) -->
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://panamax.com/wp-content/uploads/Panamax-Nice-logo-color.svg"
+                         alt="Panamax Surge Protection">
+                </div>
+            </div>
 
             <p class="brands-note">
                 All products are sold as an authorized dealer, with full manufacturer warranties and our expert local support.
@@ -1203,12 +1226,35 @@
 
             <div class="demo-items reveal-on-scroll">
                 <h3>Current Demo Highlights</h3>
-                <ul>
-                    <li>B&W 702 S3 Signature tower pair — Midnight Blue</li>
-                    <li>B&W 705 S3 Signature bookshelf pair — Midnight Blue</li>
-                    <li>B&W HTM71 S3 Signature center channel — Midnight Blue</li>
-                    <li>Kaleidescape Strato V</li>
-                </ul>
+                <div class="demo-grid">
+                    <article class="demo-card">
+                        <span class="demo-tag">Showroom demo</span>
+                        <h4 class="demo-name">B&amp;W 702 S3 Signature tower pair — Midnight Blue</h4>
+                        <p class="demo-meta">Like-new condition • Full manufacturer warranty</p>
+                        <p class="demo-price-note">Contact for current demo pricing.</p>
+                    </article>
+
+                    <article class="demo-card">
+                        <span class="demo-tag">Showroom demo</span>
+                        <h4 class="demo-name">B&amp;W 705 S3 Signature bookshelf pair — Midnight Blue</h4>
+                        <p class="demo-meta">Like-new condition • Ideal for smaller rooms or surrounds</p>
+                        <p class="demo-price-note">Contact for current demo pricing.</p>
+                    </article>
+
+                    <article class="demo-card">
+                        <span class="demo-tag">Showroom demo</span>
+                        <h4 class="demo-name">B&amp;W HTM71 S3 Signature center channel — Midnight Blue</h4>
+                        <p class="demo-meta">Voice-matched center for 700 Series Signature setups</p>
+                        <p class="demo-price-note">Contact for current demo pricing.</p>
+                    </article>
+
+                    <article class="demo-card">
+                        <span class="demo-tag">Showroom demo</span>
+                        <h4 class="demo-name">Kaleidescape Strato V</h4>
+                        <p class="demo-meta">Flagship movie server • Reference-quality video &amp; audio</p>
+                        <p class="demo-price-note">Contact for current demo pricing.</p>
+                    </article>
+                </div>
             </div>
 
             <p class="dealer-footnote reveal-on-scroll">Inventory changes frequently. If you’re interested in demo or open-box opportunities, reach out and I’ll share what’s currently available and what’s coming soon.</p>
