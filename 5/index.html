@@ -19,15 +19,9 @@
             --shadow-strong: 0 15px 45px rgba(0,0,0,0.25);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-padding-top: 160px;
-        }
+        html { scroll-padding-top: 160px; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -36,9 +30,7 @@
             background: #fff;
         }
 
-        a {
-            color: inherit;
-        }
+        a { color: inherit; }
 
         /* NAV */
 
@@ -62,10 +54,7 @@
             gap: 1.5rem;
         }
 
-        .logo-wrap {
-            display: flex;
-            flex-direction: column;
-        }
+        .logo-wrap { display: flex; flex-direction: column; }
 
         .logo {
             font-size: 1.7rem;
@@ -84,7 +73,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.75rem;
             align-items: center;
         }
 
@@ -96,18 +85,14 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         .nav-cta-inline {
             font-size: 0.9rem;
             color: #bbb;
         }
 
-        .nav-cta-inline strong {
-            color: #fff;
-        }
+        .nav-cta-inline strong { color: #fff; }
 
         .cta-button {
             background: var(--primary);
@@ -163,7 +148,7 @@
 
         .hero {
             margin-top: 80px;
-            min-height: 85vh;
+            min-height: 80vh;
             background:
                 linear-gradient(135deg, rgba(0,0,0,0.55), rgba(8,8,12,0.85)),
                 url('https://static.wixstatic.com/media/368a19a61b2949aabbc65171a17c1b35.jpg/v1/fill/w_1600,h_800,al_c,q_85/368a19a61b2949aabbc65171a17c1b35.jpg') center/cover;
@@ -175,48 +160,32 @@
         }
 
         .hero-content {
-            max-width: 960px;
+            max-width: 800px;
             padding: 3rem 2rem;
             text-align: center;
             animation: fadeInUp 1s ease-out;
         }
 
         .hero-kicker {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #c2d7f5;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .hero h1 {
-            font-size: clamp(2.6rem, 4vw, 3.8rem);
+            font-size: clamp(2.4rem, 3.6vw, 3.4rem);
             font-weight: 300;
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.9rem;
             line-height: 1.15;
             letter-spacing: 1px;
         }
 
         .hero-subline {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             opacity: 0.95;
-            margin-bottom: 1.6rem;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2.1rem;
-        }
-
-        .hero-badge {
-            font-size: 0.85rem;
-            padding: 0.35rem 0.9rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.26);
-            background: rgba(0,0,0,0.35);
+            margin-bottom: 1.7rem;
         }
 
         .hero-buttons {
@@ -229,7 +198,7 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            padding: 1rem 2.6rem;
+            padding: 0.9rem 2.3rem;
             border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
@@ -246,7 +215,7 @@
         .btn-secondary {
             background: transparent;
             color: white;
-            padding: 0.95rem 2.4rem;
+            padding: 0.85rem 2.1rem;
             border: 1px solid rgba(255,255,255,0.6);
             border-radius: 999px;
             text-decoration: none;
@@ -261,8 +230,8 @@
         }
 
         .hero-note {
-            margin-top: 1.8rem;
-            font-size: 0.95rem;
+            margin-top: 1.4rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
 
@@ -278,15 +247,15 @@
 
         .trust-bar {
             background: linear-gradient(135deg, var(--primary-soft) 0%, var(--accent) 100%);
-            padding: 1.25rem 2rem;
+            padding: 1.1rem 2rem;
             text-align: center;
         }
 
         .trust-bar p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: white;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         /* SECTIONS */
@@ -297,9 +266,7 @@
             padding: 5.5rem 2rem;
         }
 
-        .section--muted {
-            background: var(--bg-muted);
-        }
+        .section--muted { background: var(--bg-muted); }
 
         .section-header {
             text-align: center;
@@ -308,14 +275,14 @@
         }
 
         .section-header h2 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 300;
-            margin-bottom: 1rem;
+            margin-bottom: 0.9rem;
             letter-spacing: 0.5px;
         }
 
         .section-header p {
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             color: var(--text-muted);
             line-height: 1.7;
         }
@@ -330,8 +297,8 @@
         }
 
         .about-text p {
-            font-size: 1.05rem;
-            margin-bottom: 1.4rem;
+            font-size: 1.02rem;
+            margin-bottom: 1.3rem;
             line-height: 1.8;
             color: #444;
         }
@@ -343,12 +310,12 @@
         }
 
         .about-text li {
-            margin-bottom: 1.3rem;
+            margin-bottom: 1.2rem;
             line-height: 1.7;
             color: #555;
             padding-left: 1.5rem;
             position: relative;
-            font-size: 0.98rem;
+            font-size: 0.97rem;
         }
 
         .about-text li::before {
@@ -362,7 +329,7 @@
 
         .about-highlight {
             font-weight: 600;
-            margin-top: 1.8rem;
+            margin-top: 1.6rem;
             color: #333;
         }
 
@@ -374,22 +341,22 @@
 
         .credential {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 1.75rem 1.9rem;
+            padding: 1.6rem 1.8rem;
             border-radius: var(--radius-card);
             border: 1px solid #e1e4ea;
             box-shadow: var(--shadow-soft);
         }
 
         .credential h4 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.98rem;
+            margin-bottom: 0.4rem;
             font-weight: 700;
             color: var(--primary-soft);
         }
 
         .credential p {
             color: #555;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             line-height: 1.7;
         }
 
@@ -403,35 +370,35 @@
 
         .step-card {
             background: #fff;
-            padding: 2rem 2.2rem;
+            padding: 2rem 2.1rem;
             border-radius: var(--radius-card);
             box-shadow: var(--shadow-soft);
             border: 1px solid #f0f0f0;
         }
 
         .step-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--primary-soft);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
         }
 
         .step-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.7rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
             font-weight: 600;
         }
 
         .step-card p {
-            font-size: 0.97rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             line-height: 1.7;
         }
 
         .steps-cta {
             text-align: center;
-            margin-top: 2.5rem;
+            margin-top: 2.3rem;
         }
 
         /* WHY US */
@@ -458,27 +425,27 @@
         }
 
         .feature-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, var(--primary-soft) 0%, var(--accent) 100%);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.2rem;
-            font-size: 1.6rem;
+            margin-bottom: 1.1rem;
+            font-size: 1.4rem;
             color: #fff;
         }
 
         .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.7rem;
             font-weight: 600;
         }
 
         .feature-card p {
             color: var(--text-muted);
-            font-size: 0.97rem;
+            font-size: 0.95rem;
             line-height: 1.8;
         }
 
@@ -528,15 +495,13 @@
             transition: all 0.3s;
         }
 
-        .brand-logo:hover img {
-            transform: scale(1.03);
-        }
+        .brand-logo:hover img { transform: scale(1.03); }
 
         .brands-note {
             text-align: center;
             margin-top: 2.4rem;
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 0.96rem;
         }
 
         /* EXAMPLE SYSTEMS */
@@ -556,28 +521,28 @@
         }
 
         .example-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 0.6rem;
             font-weight: 600;
         }
 
         .example-card p {
-            font-size: 0.97rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.8rem;
             line-height: 1.7;
         }
 
         .example-card ul {
             list-style: none;
             padding-left: 0;
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             color: #555;
         }
 
         .example-card li {
-            margin-bottom: 0.4rem;
-            padding-left: 1.1rem;
+            margin-bottom: 0.35rem;
+            padding-left: 1.05rem;
             position: relative;
         }
 
@@ -590,7 +555,7 @@
 
         .examples-cta {
             text-align: center;
-            margin-top: 2.5rem;
+            margin-top: 2.4rem;
         }
 
         /* DEALER DEMO */
@@ -607,16 +572,16 @@
         }
 
         .dealer-content h2 {
-            font-size: 2.4rem;
-            margin-bottom: 1.2rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.1rem;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             text-align: center;
         }
 
         .dealer-content > p {
-            font-size: 1.05rem;
-            margin-bottom: 1.8rem;
+            font-size: 1.02rem;
+            margin-bottom: 1.7rem;
             line-height: 1.8;
             opacity: 0.95;
             text-align: center;
@@ -627,7 +592,7 @@
 
         .demo-items {
             background: rgba(255,255,255,0.12);
-            padding: 2.4rem 2.6rem;
+            padding: 2.3rem 2.5rem;
             border-radius: var(--radius-card);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
@@ -635,8 +600,8 @@
         }
 
         .demo-items h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             opacity: 0.9;
@@ -650,10 +615,10 @@
         }
 
         .demo-items li {
-            padding: 1.1rem 1.2rem;
+            padding: 1.05rem 1.15rem;
             background: rgba(0,0,0,0.2);
             border-radius: 12px;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             border: 1px solid rgba(255,255,255,0.18);
             transition: all 0.3s;
         }
@@ -671,17 +636,15 @@
         }
 
         .dealer-footnote {
-            margin-top: 2rem;
-            font-size: 0.95rem;
+            margin-top: 1.9rem;
+            font-size: 0.93rem;
             opacity: 0.92;
             text-align: left;
         }
 
         /* FAQ */
 
-        .faq-section {
-            background: #fff;
-        }
+        .faq-section { background: #fff; }
 
         .faq-grid {
             display: grid;
@@ -693,19 +656,19 @@
         .faq-item {
             background: #fafafa;
             border-radius: var(--radius-card);
-            padding: 1.6rem 1.8rem;
+            padding: 1.5rem 1.7rem;
             border: 1px solid #ececec;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
         }
 
         .faq-item h3 {
-            font-size: 1rem;
-            margin-bottom: 0.6rem;
+            font-size: 0.98rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
         .faq-item p {
-            font-size: 0.96rem;
+            font-size: 0.93rem;
             color: var(--text-muted);
             line-height: 1.7;
         }
@@ -720,30 +683,30 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 3.5rem;
+            gap: 3.2rem;
             align-items: flex-start;
         }
 
         .contact-intro h2 {
-            font-size: 2.4rem;
-            margin-bottom: 1.2rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             font-weight: 300;
         }
 
         .contact-intro p {
-            font-size: 1.05rem;
-            margin-bottom: 1.8rem;
+            font-size: 1.02rem;
+            margin-bottom: 1.7rem;
             line-height: 1.7;
             opacity: 0.9;
         }
 
         .contact-steps {
-            margin-top: 1.8rem;
+            margin-top: 1.6rem;
         }
 
         .contact-steps h4 {
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.96rem;
+            margin-bottom: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             opacity: 0.85;
@@ -756,9 +719,9 @@
 
         .contact-steps li {
             position: relative;
-            padding-left: 1.6rem;
-            margin-bottom: 0.7rem;
-            font-size: 0.96rem;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.93rem;
             opacity: 0.9;
         }
 
@@ -771,26 +734,26 @@
 
         .demo-cta {
             background: rgba(102, 126, 234, 0.16);
-            padding: 1.7rem 1.9rem;
+            padding: 1.6rem 1.8rem;
             border-radius: var(--radius-card);
-            margin-top: 2rem;
+            margin-top: 1.9rem;
             border: 1px solid rgba(102, 126, 234, 0.4);
         }
 
         .demo-cta h4 {
-            font-size: 1.15rem;
-            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
         }
 
         .demo-cta p {
             opacity: 0.9;
-            font-size: 0.97rem;
+            font-size: 0.95rem;
             line-height: 1.7;
         }
 
         .contact-info {
             background: rgba(15,23,42,0.9);
-            padding: 2.4rem 2.6rem;
+            padding: 2.2rem 2.4rem;
             border-radius: var(--radius-card);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.12);
@@ -798,14 +761,14 @@
         }
 
         .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.6rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.4rem;
             font-weight: 600;
         }
 
         .contact-item {
-            margin-bottom: 1.6rem;
-            padding-bottom: 1.6rem;
+            margin-bottom: 1.4rem;
+            padding-bottom: 1.4rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
@@ -816,15 +779,15 @@
         }
 
         .contact-item h4 {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
             opacity: 0.7;
         }
 
         .contact-item p {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 600;
         }
 
@@ -833,12 +796,10 @@
             text-decoration: none;
         }
 
-        .contact-item p a:hover {
-            text-decoration: underline;
-        }
+        .contact-item p a:hover { text-decoration: underline; }
 
         .contact-hours {
-            font-size: 0.98rem;
+            font-size: 0.93rem;
             line-height: 1.6;
             font-weight: 500;
         }
@@ -848,18 +809,18 @@
         footer {
             background: var(--bg-dark);
             color: white;
-            padding: 2.4rem 2rem 2.8rem;
+            padding: 2.2rem 2rem 2.6rem;
             text-align: center;
         }
 
         footer p {
             opacity: 0.65;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         footer .footer-top {
-            margin-bottom: 0.7rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.88rem;
         }
 
         /* ANIMATIONS */
@@ -876,60 +837,29 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(32px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(32px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
         }
 
         /* RESPONSIVE */
 
         @media (max-width: 992px) {
-            html {
-                scroll-padding-top: 140px;
-            }
-
-            .nav-content {
-                padding: 1rem 1.4rem;
-            }
-
-            .nav-cta-inline {
-                display: none;
-            }
-
-            .hero {
-                min-height: 80vh;
-            }
-
-            .section {
-                padding-inline: 1.4rem;
-            }
+            html { scroll-padding-top: 140px; }
+            .nav-content { padding: 1rem 1.4rem; }
+            .nav-cta-inline { display: none; }
+            .hero { min-height: 75vh; }
+            .section { padding-inline: 1.4rem; }
         }
 
         @media (max-width: 768px) {
-            html {
-                scroll-padding-top: 120px;
-            }
-
-            .nav-content {
-                padding-inline: 1.1rem;
-            }
+            html { scroll-padding-top: 120px; }
+            .nav-content { padding-inline: 1.1rem; }
 
             .nav-links {
                 position: absolute;
@@ -943,17 +873,13 @@
                 gap: 0.75rem;
                 border: 1px solid rgba(255,255,255,0.12);
                 box-shadow: 0 18px 40px rgba(0,0,0,0.6);
-                min-width: 210px;
+                min-width: 190px;
                 display: none;
             }
 
-            .nav.open .nav-links {
-                display: flex;
-            }
+            .nav.open .nav-links { display: flex; }
 
-            .nav-toggle {
-                display: flex;
-            }
+            .nav-toggle { display: flex; }
 
             .cta-button {
                 width: 100%;
@@ -961,58 +887,26 @@
                 justify-content: center;
             }
 
-            .logo {
-                font-size: 1.3rem;
-                letter-spacing: 4px;
-            }
+            .logo { font-size: 1.3rem; letter-spacing: 4px; }
+            .logo-subtitle { display: false; }
 
-            .logo-subtitle {
-                display: none;
-            }
+            .hero-content { padding-inline: 1.4rem; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero-subline { font-size: 0.98rem; }
 
-            .hero-content {
-                padding-inline: 1.4rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-subline {
-                font-size: 1rem;
-            }
-
-            .hero-badges {
-                gap: 0.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
+            .section-header h2 { font-size: 1.9rem; }
 
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .brands-section {
-                padding-inline: 1.4rem;
-            }
-
-            .demo-items {
-                padding-inline: 1.5rem;
-            }
-
-            .contact-info {
-                padding-inline: 1.7rem;
-            }
+            .brands-section { padding-inline: 1.4rem; }
+            .demo-items { padding-inline: 1.5rem; }
+            .contact-info { padding-inline: 1.7rem; }
         }
 
         @media (max-width: 480px) {
-            .hero-badge {
-                font-size: 0.78rem;
-            }
-
             .btn-primary,
             .btn-secondary {
                 width: 100%;
@@ -1041,11 +935,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#how-it-works">How It Works</a>
-                <a href="#why-us">Why Us</a>
                 <a href="#brands">Brands</a>
-                <a href="#examples">Example Systems</a>
-                <a href="#dealer-demo">Dealer Demo</a>
-                <a href="#faq">FAQ</a>
                 <a href="#contact" class="cta-button">Schedule a Demo</a>
             </div>
         </div>
@@ -1055,20 +945,14 @@
         <div class="hero-content">
             <p class="hero-kicker">Home Theater Boutique · Roseville, MN</p>
             <h1 id="hero-heading">Premium Home Theater Systems for Minneapolis &amp; St Paul</h1>
-            <p class="hero-subline">Thoughtfully curated gear for mid- to upper-end living rooms and dedicated theaters.</p>
-
-            <div class="hero-badges">
-                <div class="hero-badge">Authorized dealer for carefully selected premium brands</div>
-                <div class="hero-badge">Physician-run, enthusiast-built systems</div>
-                <div class="hero-badge">Private demo space by appointment only</div>
-            </div>
+            <p class="hero-subline">Curated home theater systems for real Twin Cities living rooms and dedicated theaters.</p>
 
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Schedule Your Private Demo</a>
                 <a href="#brands" class="btn-secondary">Browse Authorized Brands</a>
             </div>
 
-            <p class="hero-note">No-pressure consultation · Straightforward pricing · Local support</p>
+            <p class="hero-note">No-pressure consultation · Appointment-only demo space · Local support</p>
         </div>
 
         <div class="scroll-indicator" aria-hidden="true">
@@ -1079,7 +963,7 @@
     </section>
 
     <div class="trust-bar">
-        <p>Trusted premium brands, available locally through Twin Cities HiFi · Full manufacturer warranty on every purchase</p>
+        <p>Authorized dealer for carefully selected premium brands · Full manufacturer warranty on every purchase</p>
     </div>
 
     <section class="section" id="about">
@@ -1188,83 +1072,34 @@
 
             <div class="brands-grid">
                 <div class="brand-logo">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Denon_Logo.svg/800px-Denon_Logo.svg.png"
-                        alt="Denon"
-                        loading="lazy"
-                    >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Denon_Logo.svg/800px-Denon_Logo.svg.png" alt="Denon" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Marantz-Logo.svg/960px-Marantz-Logo.svg.png"
-                        alt="Marantz"
-                        loading="lazy"
-                    >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Marantz-Logo.svg/960px-Marantz-Logo.svg.png" alt="Marantz" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/B%26W_Logo_new.svg/960px-B%26W_Logo_new.svg.png"
-                        alt="Bowers &amp; Wilkins"
-                        loading="lazy"
-                    >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/B%26W_Logo_new.svg/960px-B%26W_Logo_new.svg.png" alt="Bowers &amp; Wilkins" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://www.svsound.com/cdn/shop/files/SVS_Logo_2023_Black.png"
-                        alt="SVS"
-                        loading="lazy"
-                    >
+                    <img src="https://www.svsound.com/cdn/shop/files/SVS_Logo_2023_Black.png" alt="SVS" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Polk_Audio_logo.png"
-                        alt="Polk Audio"
-                        loading="lazy"
-                    >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Polk_Audio_logo.png" alt="Polk Audio" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Definitive_Logo_full.svg/648px-Definitive_Logo_full.svg.png"
-                        alt="Definitive Technology"
-                        loading="lazy"
-                    >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Definitive_Logo_full.svg/648px-Definitive_Logo_full.svg.png" alt="Definitive Technology" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/en/b/bc/Kaleidescape_%28logo%29.svg"
-                        alt="Kaleidescape"
-                        loading="lazy"
-                    >
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Kaleidescape_%28logo%29.svg" alt="Kaleidescape" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://rticontrol.com/wp-content/uploads/2021/02/RTI_logo.png"
-                        alt="RTI Control"
-                        loading="lazy"
-                    >
+                    <img src="https://rticontrol.com/wp-content/uploads/2021/02/RTI_logo.png" alt="RTI Control" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://furmanpower.com/wp-content/uploads/2020/07/furman_logo.png"
-                        alt="Furman"
-                        loading="lazy"
-                    >
+                    <img src="https://furmanpower.com/wp-content/uploads/2020/07/furman_logo.png" alt="Furman" loading="lazy">
                 </div>
-
                 <div class="brand-logo">
-                    <img
-                        src="https://www.panamax.com/on/demandware.static/-/Library-Sites-Library_Content/default/dw2d840a90/images/Panamax-Logo-black.png"
-                        alt="Panamax"
-                        loading="lazy"
-                    >
+                    <img src="https://www.panamax.com/on/demandware.static/-/Library-Sites-Library_Content/default/dw2d840a90/images/Panamax-Logo-black.png" alt="Panamax" loading="lazy">
                 </div>
             </div>
 
