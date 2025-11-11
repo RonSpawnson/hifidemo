@@ -1,0 +1,11 @@
+📄 Custom License – All Rights Reserved
+
+Copyright © 2025 Ron Spawnson. All rights reserved.
+
+This code and all accompanying materials in this repository (the “Software”) are the exclusive property of Ron Spawnson (“the Owner”).
+
+You are not permitted to copy, distribute, modify, merge, publish, sublicense, or use the Software, in whole or in part, for any purpose without prior express written permission from the Owner.
+
+The Software is provided for viewing and reference purposes only, and may not be incorporated into any other work, whether commercial or non-commercial, without such permission.
+
+For licensing inquiries, please contact: [your email or preferred contact method]
