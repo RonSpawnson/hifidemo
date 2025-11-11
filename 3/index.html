@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twin Cities HiFi | Home Theater in Minneapolis & St Paul</title>
+    <meta name="description" content="Physician-owned home theater boutique in Roseville, MN. Curated Denon, Marantz, Bowers & Wilkins, SVS, Kaleidescape and more for mid to upper-end living rooms and dedicated theaters.">
+    <style>
+        :root {
+            --primary: #4a9fd8;
+            --primary-soft: #667eea;
+            --accent: #764ba2;
+            --bg-dark: #050609;
+            --bg-muted: #f5f5f7;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --radius-card: 16px;
+            --shadow-soft: 0 4px 20px rgba(15,23,42,0.08);
+            --shadow-strong: 0 18px 45px rgba(15,23,42,0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: 160px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: #fff;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* NAV */
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 6, 9, 0.95);
+            backdrop-filter: blur(14px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148,163,184,0.25);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.9rem 1.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 1.55rem;
+            font-weight: 400;
+            color: var(--primary);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .logo-subtitle {
+            font-size: 0.78rem;
+            color: #9ca3af;
+            letter-spacing: 1px;
+            margin-top: 0.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.7rem;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.15s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta-inline {
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        .nav-cta-inline a {
+            color: #e5e7eb;
+            text-decoration: none;
+        }
+
+        .nav-cta-inline a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.55rem 1.25rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(74,159,216,0.45);
+            background: #3b88c5;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.7);
+            background: transparent;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: #e5e7eb;
+            border-radius: 999px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .nav.open .nav-toggle span:nth-child(1) {
+            transform: translateY(3.5px) rotate(45deg);
+        }
+
+        .nav.open .nav-toggle span:nth-child(2) {
+            transform: translateY(-3.5px) rotate(-45deg);
+        }
+
+        /* HERO */
+
+        .hero {
+            margin-top: 70px;
+            min-height: 80vh;
+            background:
+                linear-gradient(135deg, rgba(5,6,9,0.82), rgba(15,23,42,0.95)),
+                url('https://static.wixstatic.com/media/368a19a61b2949aabbc65171a17c1b35.jpg/v1/fill/w_1600,h_800,al_c,q_85/368a19a61b2949aabbc65171a17c1b35.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            width: 100%;
+            padding: 2.8rem 1.6rem 3.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-main {
+            max-width: 520px;
+        }
+
+        .hero-kicker {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #c4d3f5;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 4vw, 3.1rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 1.6rem;
+            color: #e5e7eb;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.85rem 1.9rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            box-shadow: var(--shadow-strong);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 20px 50px rgba(74,159,216,0.65);
+            background: #3b88c5;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e5e7eb;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid rgba(229,231,235,0.7);
+            transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #f9fafb;
+            color: #111827;
+            border-color: transparent;
+        }
+
+        .hero-pill {
+            margin-top: 1.4rem;
+            font-size: 0.85rem;
+            color: #cbd5f5;
+            padding: 0.6rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.7);
+            border: 1px solid rgba(148,163,184,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .hero-pill span {
+            font-size: 1rem;
+        }
+
+        .hero-side {
+            max-width: 380px;
+            margin-left: auto;
+        }
+
+        .hero-card {
+            background: rgba(15,23,42,0.82);
+            border-radius: 20px;
+            padding: 1.8rem 1.7rem;
+            border: 1px solid rgba(148,163,184,0.5);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .hero-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+        }
+
+        .hero-card p {
+            font-size: 0.9rem;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .hero-card li {
+            font-size: 0.88rem;
+            color: #e5e7eb;
+            margin-bottom: 0.4rem;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .hero-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0.2rem;
+            top: 0.05rem;
+            color: var(--primary);
+        }
+
+        /* TRUST BAR */
+
+        .trust-bar {
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.85rem 1.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        .trust-left {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .trust-left span:first-child {
+            font-size: 1.1rem;
+        }
+
+        .trust-right {
+            color: #6b7280;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4.8rem 1.6rem;
+        }
+
+        .section--muted {
+            background: var(--bg-muted);
+        }
+
+        .section-header {
+            max-width: 680px;
+            margin: 0 auto 2.8rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            font-weight: 300;
+            margin-bottom: 0.7rem;
+        }
+
+        .section-header p {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-text p {
+            font-size: 0.98rem;
+            margin-bottom: 1.2rem;
+            color: #374151;
+        }
+
+        .about-text p strong {
+            font-weight: 600;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.1rem;
+        }
+
+        .about-text li {
+            font-size: 0.94rem;
+            color: #4b5563;
+            margin-bottom: 0.9rem;
+            padding-left: 1.3rem;
+            position: relative;
+        }
+
+        .about-text li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            color: var(--primary-soft);
+            font-size: 0.9rem;
+        }
+
+        .about-highlight {
+            font-size: 0.98rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            color: #111827;
+        }
+
+        .credential-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.1rem;
+        }
+
+        .credential {
+            background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+            padding: 1.4rem 1.5rem;
+            border-radius: var(--radius-card);
+            border: 1px solid #e5e7eb;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .credential h4 {
+            font-size: 0.92rem;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+            color: var(--primary-soft);
+        }
+
+        .credential p {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        /* BRANDS */
+
+        .brands-section-outer {
+            background: linear-gradient(to bottom, #f9fafb 0%, #e5e7eb 100%);
+        }
+
+        .brands-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4.8rem 1.6rem;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2.2rem;
+        }
+
+        .brand-logo {
+            background: white;
+            padding: 2.1rem 1.8rem;
+            border-radius: var(--radius-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .brand-logo:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(15,23,42,0.14);
+        }
+
+        .brand-logo img {
+            max-width: 85%;
+            max-height: 68px;
+            object-fit: contain;
+        }
+
+        .brands-note {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* DEALER DEMO */
+
+        .dealer-demo-section {
+            background: linear-gradient(135deg, var(--primary-soft) 0%, var(--accent) 100%);
+            color: #f9fafb;
+        }
+
+        .dealer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4.4rem 1.6rem;
+        }
+
+        .dealer-inner h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .dealer-inner > p {
+            font-size: 0.96rem;
+            text-align: center;
+            opacity: 0.95;
+            margin-bottom: 1.8rem;
+        }
+
+        .demo-items {
+            background: rgba(15,23,42,0.12);
+            padding: 2rem 2.1rem;
+            border-radius: var(--radius-card);
+            border: 1px solid rgba(249,250,251,0.25);
+        }
+
+        .demo-items h3 {
+            font-size: 0.92rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .demo-items ul {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .demo-items li {
+            font-size: 0.9rem;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            background: rgba(15,23,42,0.28);
+            border: 1px solid rgba(148,163,184,0.55);
+        }
+
+        .demo-items li::before {
+            content: "✓ ";
+            color: #bbf7d0;
+            font-weight: 600;
+        }
+
+        .dealer-footnote {
+            margin-top: 1.6rem;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            background: #0b1120;
+            color: #e5e7eb;
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4.6rem 1.6rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .contact-intro h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.9rem;
+        }
+
+        .contact-intro p {
+            font-size: 0.96rem;
+            color: #cbd5f5;
+            margin-bottom: 1.6rem;
+        }
+
+        .contact-steps h4 {
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-steps ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact-steps li {
+            font-size: 0.9rem;
+            color: #e5e7eb;
+            margin-bottom: 0.55rem;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .contact-steps li::before {
+            content: "•";
+            position: absolute;
+            left: 0.2rem;
+            top: 0.05rem;
+            color: var(--primary);
+        }
+
+        .demo-cta {
+            margin-top: 1.7rem;
+            background: rgba(30,64,175,0.4);
+            border-radius: var(--radius-card);
+            padding: 1.4rem 1.5rem;
+            border: 1px solid rgba(191,219,254,0.5);
+        }
+
+        .demo-cta h4 {
+            font-size: 0.98rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .demo-cta p {
+            font-size: 0.9rem;
+            color: #dbeafe;
+        }
+
+        .contact-info {
+            background: rgba(15,23,42,0.9);
+            border-radius: var(--radius-card);
+            padding: 1.9rem 2rem;
+            border: 1px solid rgba(148,163,184,0.7);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .contact-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.3rem;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            margin-bottom: 1.4rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid rgba(148,163,184,0.35);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.75;
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-item p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-hours {
+            font-size: 0.9rem;
+            color: #e5e7eb;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--bg-dark);
+            color: #9ca3af;
+            padding: 2.2rem 1.6rem 2.6rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p:first-child {
+            margin-bottom: 0.4rem;
+        }
+
+        /* SCROLL REVEAL */
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 992px) {
+            html {
+                scroll-padding-top: 140px;
+            }
+
+            .hero-inner {
+                grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+                gap: 2.4rem;
+            }
+
+            .hero-card {
+                padding: 1.6rem;
+            }
+
+            .section {
+                padding-inline: 1.4rem;
+            }
+
+            .brands-inner,
+            .dealer-inner,
+            .contact-inner {
+                padding-inline: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 120px;
+            }
+
+            .nav-content {
+                padding-inline: 1.1rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: 1rem;
+                background: rgba(5,6,9,0.98);
+                border-radius: 14px;
+                padding: 0.8rem 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+                border: 1px solid rgba(148,163,184,0.6);
+                box-shadow: 0 16px 40px rgba(15,23,42,0.8);
+                min-width: 190px;
+                display: none;
+            }
+
+            .nav.open .nav-links {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-cta-inline {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.35rem;
+                letter-spacing: 4px;
+            }
+
+            .logo-subtitle {
+                display: none;
+            }
+
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 2rem;
+            }
+
+            .hero-main {
+                max-width: none;
+            }
+
+            .hero-side {
+                max-width: none;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-card {
+                max-width: 420px;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                text-align: center;
+                width: 100%;
+            }
+
+            .hero-card,
+            .contact-info {
+                padding-inline: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Main navigation">
+        <div class="nav-content">
+            <div class="logo-wrap">
+                <div class="logo">Twin Cities HIFI</div>
+                <div class="logo-subtitle">Roseville • Minneapolis • St Paul</div>
+            </div>
+
+            <div class="nav-cta-inline">
+                Call or text <a href="tel:16512531876">651-253-1876</a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#brands">Brands</a>
+                <a href="#dealer-demo">Dealer Demo</a>
+                <a href="#contact" class="cta-button">Schedule a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+            <div class="hero-main">
+                <p class="hero-kicker">Physician-owned home theater boutique</p>
+                <h1 id="hero-heading">Premium home theater systems for real homes.</h1>
+                <p class="hero-sub">Curated Denon, Marantz, Bowers &amp; Wilkins, SVS, Kaleidescape and more for mid to upper-end living rooms and dedicated theaters across the Twin Cities.</p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Schedule a private demo</a>
+                    <a href="#brands" class="btn-secondary">Browse authorized brands</a>
+                </div>
+
+                <div class="hero-pill">
+                    <span>✓</span> Authorized dealer for every brand we sell
+                </div>
+            </div>
+
+            <div class="hero-side">
+                <div class="hero-card">
+                    <h3>Hi, I'm Madhu.</h3>
+                    <p>I'm a physician and long-time home theater enthusiast who started Twin Cities HiFi in 2024 to help people build systems that simply sound right.</p>
+                    <ul>
+                        <li>Private, appointment-only demo space in Roseville, MN</li>
+                        <li>Curated gear for real-world living rooms and theaters</li>
+                        <li>Direct access to the owner from first call to follow-up</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <div class="trust-left">
+                <span>✓</span>
+                <span>Authorized dealer • Full manufacturer warranty on every purchase</span>
+            </div>
+            <div class="trust-right">
+                Serving Minneapolis, St Paul, and surrounding communities from Roseville, MN
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="about">
+        <div class="section-header reveal-on-scroll">
+            <h2>About Twin Cities HiFi</h2>
+            <p>A small, owner-operated shop focused on systems that feel at home in your space and deliver a genuine step up in performance.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text reveal-on-scroll">
+                <p>Because this is a passion project and not a big-box showroom, I only carry brands and combinations I would happily use in my own systems. That means honest guidance, sensible upgrades, and no pressure.</p>
+
+                <p><strong>Some of the brands I trust and why:</strong></p>
+
+                <ul>
+                    <li><strong>Denon and Marantz</strong> offer a wide range of AVRs and processors to fit many budgets and listening goals. With options for DIRAC room correction, they rival the best room correction suites available today.</li>
+                    <li><strong>Bowers &amp; Wilkins</strong> delivers stunning performance for both critical 2-channel listening and fully immersive home theater setups.</li>
+                    <li><strong>SVS</strong> is known for legendary subwoofers that add deep, controlled bass and that satisfying “chest thump” to movies.</li>
+                    <li><strong>Kaleidescape</strong> is the ultimate video source for cinephiles who want reference-level audio and video quality at home.</li>
+                    <li><strong>Furman and Panamax</strong> provide robust power conditioning and surge protection to help protect your investment over the long term.</li>
+                    <li><strong>RTI control systems</strong> tie everything together so a complex system feels simple and intuitive for everyone in the family. They’re also locally owned with headquarters in Shakopee.</li>
+                </ul>
+
+                <p class="about-highlight">I’m authorized for everything I sell, so you get the full manufacturer’s warranty plus a local partner who actually cares how your system sounds.</p>
+            </div>
+
+            <div class="credential-grid">
+                <div class="credential reveal-on-scroll">
+                    <h4>📍 Location</h4>
+                    <p>Private demo space in Roseville, MN, serving Minneapolis, St Paul, and neighboring communities.</p>
+                </div>
+                <div class="credential reveal-on-scroll">
+                    <h4>🎧 What I Focus On</h4>
+                    <p>Curated systems for mid to upper-end living rooms and dedicated theaters — with an emphasis on performance, reliability, and long-term enjoyment.</p>
+                </div>
+                <div class="credential reveal-on-scroll">
+                    <h4>🤝 How We’ll Work Together</h4>
+                    <p>You’ll work directly with me from first conversation to follow-up support. No call centers, no sales quotas — just straightforward guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="brands-section-outer" id="brands" aria-labelledby="brands-heading">
+        <div class="brands-inner">
+            <div class="section-header reveal-on-scroll">
+                <h2 id="brands-heading">Authorized Premium Brands</h2>
+                <p>Carefully selected for performance, reliability, and support — not to fill shelves.</p>
+            </div>
+
+            <div class="brands-grid">
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/04/Denon-Logo.png" alt="Denon Home Theater & AV Receivers">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://logos-world.net/wp-content/uploads/2023/02/Marantz-Logo.png" alt="Marantz High-End AV Receivers and Processors">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://1000logos.net/wp-content/uploads/2020/09/Bowers-Wilkins-Logo.png" alt="Bowers & Wilkins Speakers">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://www.svsound.com/cdn/shop/files/SVS_Logo_2023_Black.png" alt="SVS Subwoofers and Speakers">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Definitive_Technology_logo.svg/2560px-Definitive_Technology_logo.svg.png" alt="Definitive Technology Speakers">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Polk_Audio_logo.svg/2560px-Polk_Audio_logo.svg.png" alt="Polk Audio Speakers">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://www.kaleidescape.com/wp-content/themes/kaleidescape/dist/images/kaleidescape-logo_b8d7fe5e.svg" alt="Kaleidescape Movie Server Systems">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://rticontrol.com/wp-content/uploads/2021/02/RTI_logo.png" alt="RTI Control Systems">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://furmanpower.com/wp-content/uploads/2020/07/furman_logo.png" alt="Furman Power Conditioning">
+                </div>
+                <div class="brand-logo reveal-on-scroll">
+                    <img src="https://www.panamax.com/on/demandware.static/-/Library-Sites-Library_Content/default/dw2d840a90/images/Panamax-Logo-black.png" alt="Panamax Surge Protection">
+                </div>
+            </div>
+
+            <p class="brands-note reveal-on-scroll">All products include full manufacturer warranties and local support from someone who actually listens to your system with you.</p>
+        </div>
+    </div>
+
+    <section class="dealer-demo-section" id="dealer-demo">
+        <div class="dealer-inner">
+            <h2 class="reveal-on-scroll">Dealer Demo Stock</h2>
+            <p class="reveal-on-scroll">These items are used in the showroom and kept in excellent condition. Unless noted otherwise, they are “like new” and include the full manufacturer’s warranty. Contact for pricing.</p>
+            
+            <div class="demo-items reveal-on-scroll">
+                <h3>Current demo highlights</h3>
+                <ul>
+                    <li>B&amp;W 702 S3 Signature tower pair — Midnight Blue</li>
+                    <li>B&amp;W 705 S3 Signature bookshelf pair — Midnight Blue</li>
+                    <li>B&amp;W HTM71 S3 Signature center channel — Midnight Blue</li>
+                    <li>Kaleidescape Strato V</li>
+                </ul>
+            </div>
+
+            <p class="dealer-footnote reveal-on-scroll">Inventory changes frequently. If you’re interested in demo or open-box opportunities, reach out and I’ll let you know what’s currently available and what’s coming in.</p>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <div class="contact-grid">
+                <div class="contact-intro">
+                    <h2 class="reveal-on-scroll">Contact</h2>
+                    <p class="reveal-on-scroll">Please get in touch for pricing, product questions, or to place an order. Whether you’re building your first surround system or refining a serious theater, I’m happy to help you sort through the options.</p>
+
+                    <div class="contact-steps reveal-on-scroll">
+                        <h4>What to expect</h4>
+                        <ul>
+                            <li>We’ll chat briefly about your room, budget, and goals.</li>
+                            <li>I’ll recommend a small set of well-matched options — no pressure, no upsell.</li>
+                            <li>If it makes sense, we’ll schedule a private demo in Roseville.</li>
+                        </ul>
+                    </div>
+
+                    <div class="demo-cta reveal-on-scroll">
+                        <h4>🎬 Private demos by appointment</h4>
+                        <p>Hear a properly set-up system before you commit. It’s the easiest way to understand what matters most for your room and listening preferences.</p>
+                    </div>
+                </div>
+
+                <div class="contact-info reveal-on-scroll">
+                    <h3>Get in touch</h3>
+                    
+                    <div class="contact-item">
+                        <h4>Phone / Text</h4>
+                        <p><a href="tel:16512531876">651-253-1876</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:twincitieshifi@gmail.com">twincitieshifi@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>Roseville, MN<br><span style="font-size:0.86rem; color:#9ca3af;">Serving Minneapolis, St Paul, and surrounding communities</span></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Hours</h4>
+                        <p class="contact-hours">
+                            Mon – Fri: 9:00am – 4:00pm<br>
+                            Sat: 9:00am – 1:00pm<br>
+                            Sun: Closed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Twin Cities HiFi • Authorized dealer for all brands carried • Roseville, MN</p>
+        <p>Your Minneapolis and St Paul source for home theater done right.</p>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const nav = document.querySelector('.nav');
+        const navToggle = document.querySelector('.nav-toggle');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                nav.classList.toggle('open');
+            });
+        }
+
+        // Smooth scrolling with offset for fixed nav + potential Wix banner
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+
+                    const navHeight = 70;
+                    const wixBannerHeight = 50; // approximate Wix Studio banner height
+                    const extra = 20;
+                    const offset = navHeight + wixBannerHeight + extra;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    nav.classList.remove('open');
+                }
+            });
+        });
+
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
